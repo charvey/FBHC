@@ -12,7 +12,7 @@ namespace FBHC.Problems
             get { return new ProblemConfig("Squished Status", 2012, 1); }
         }
 
-        protected override int LinesPerCase { get { return 2; } }
+        protected override int LinesPerTestCase { get { return 2; } }
 
         protected override string[] SplitLines(string text)
         {

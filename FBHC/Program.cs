@@ -3,20 +3,39 @@ using FBHC.Problems;
 
 namespace FBHC
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var problems = new Problem[] {
-                new Checkpoint()
-            };
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			var newProblems = new ProblemConfig[]
+			{
+				new ProblemConfig("New Year's Resolution",2015,0)
+			};
 
-            foreach (var problem in problems)
-            {
-                problem.Validate();
-            }
+			var creator = new ProblemCreator();
+			foreach(var config in newProblems)
+			{
+				creator.Create(config);
+			}
 
-            Console.In.Read();
-        }
-    }
+			var problems = new Problem[] {
+				new CookingTheBooks()
+			};
+
+			foreach (var problem in problems)
+			{
+				try
+				{
+					problem.Validate();
+					//problem.Solve();
+				}
+				catch (NotImplementedException)
+				{
+
+				}
+			}
+
+			Console.In.Read();
+		}
+	}
 }

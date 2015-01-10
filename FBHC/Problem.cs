@@ -10,11 +10,21 @@ namespace FBHC
 
         protected abstract string SolveTestCase(string[] input);
 
-        protected virtual int LinesPerCase { get { return 1; } }
+        protected virtual int LinesPerTestCase { get { return 1; } }
+
+        protected virtual int GetLinesInTestCase(string nextLine)
+        {
+            return LinesPerTestCase;
+        }
 
         protected virtual string[] SplitLines(string text)
         {
             return text.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+        }
+
+        protected string[] Split(string s)
+        {
+            return s.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         public void Solve()
@@ -67,9 +77,20 @@ namespace FBHC
             int cases = Convert.ToInt32(lines[0]);
 
             string[] output = new string[cases];
+            int lineNumber=1;
             for (int i = 0; i < cases; i++)
             {
-                string solution = SolveTestCase(lines.Skip(1 + LinesPerCase * i).Take(LinesPerCase).ToArray());
+                int testCaseSize=GetLinesInTestCase(lines[lineNumber]);
+                string[] testCaseInput = new string[testCaseSize];
+
+                for (int j = 0; j < testCaseInput.Length; j++)
+                {
+                    testCaseInput[j] = lines[lineNumber];
+                    lineNumber++;
+                }
+
+                string solution = SolveTestCase(testCaseInput);
+
                 output[i] = string.Format("Case #{0}: {1}", i + 1, solution);
             }
             return output;

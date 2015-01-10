@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace FBHC
 {
@@ -20,11 +22,14 @@ namespace FBHC
         {
             get
             {
-                return Name.Replace(" ", "");
+				var textInfo = CultureInfo.CurrentCulture.TextInfo;
+				var cleanName = Regex.Replace(Name, @"[^A-z\ ]", "");
+				var pascal = textInfo.ToTitleCase(cleanName);
+                return pascal.Replace(" ", "");
             }
         }
 
-        private String BaseDirectory
+        public String BaseDirectory
         {
             get
             {

@@ -13,7 +13,7 @@ namespace FBHC.Problems
             get { return new ProblemConfig("Find The Min", 2013, 0); }
         }
 
-        protected override int LinesPerCase { get { return 2; } }
+        protected override int LinesPerTestCase { get { return 2; } }
         
         protected override string SolveTestCase(string[] input)
         {
