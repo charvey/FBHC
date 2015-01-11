@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -7,15 +8,22 @@ namespace FBHC
     public abstract class Problem
     {
         protected abstract ProblemConfig Config { get; }
+		protected int TestCaseCount { get; set; }
+
+		protected virtual int Setup(string[] lines)
+		{
+			TestCaseCount = Convert.ToInt32(lines[0]);
+			return 1;
+		}
 
         protected abstract string SolveTestCase(string[] input);
 
         protected virtual int LinesPerTestCase { get { return 1; } }
 
-        protected virtual int GetLinesInTestCase(string nextLine)
-        {
-            return LinesPerTestCase;
-        }
+		protected virtual int GetLinesInTestCase(IEnumerable<string> remainingLines)
+		{
+			return LinesPerTestCase;
+		}
 
         protected virtual string[] SplitLines(string text)
         {
@@ -68,19 +76,11 @@ namespace FBHC
         private string[] SolveInput(string input)
         {
             string[] lines = SplitLines(input);
-
-            if (lines.Length == 0)
+			int lineNumber = Setup(lines);
+			string[] output = new string[TestCaseCount];
+			for (int i = 0; i < TestCaseCount; i++)
             {
-                return new string[0];
-            }
-
-            int cases = Convert.ToInt32(lines[0]);
-
-            string[] output = new string[cases];
-            int lineNumber=1;
-            for (int i = 0; i < cases; i++)
-            {
-                int testCaseSize=GetLinesInTestCase(lines[lineNumber]);
+				int testCaseSize = GetLinesInTestCase(lines.Skip(lineNumber));
                 string[] testCaseInput = new string[testCaseSize];
 
                 for (int j = 0; j < testCaseInput.Length; j++)

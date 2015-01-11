@@ -12,9 +12,9 @@ namespace FBHC.Problems
             get { return new ProblemConfig("Square Detector", 2014, 0); }
         }
 
-        protected override int GetLinesInTestCase(string nextLine)
+        protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
         {
-            return int.Parse(nextLine) + 1;
+            return int.Parse(remainingLines.First()) + 1;
         }
 
         protected override string SolveTestCase(string[] input)
