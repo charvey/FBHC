@@ -18,7 +18,7 @@ namespace FBHC
 				try
 				{
 					problem.Validate();
-					//problem.Solve();
+					problem.Solve();
 				}
 				catch (NotImplementedException)
 				{

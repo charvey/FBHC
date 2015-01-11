@@ -49,7 +49,9 @@
     <Compile Include="ProblemConfig.cs" />
     <Compile Include="ProblemCreator.cs" />
     <Compile Include="Problems\AlphabetSoup.cs" />
-    <Compile Include="Problems\CookingTheBooks.cs" />
+    <Compile Include="Problems\CookingTheBooks.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Problems\Labelmaker.cs" />
     <Compile Include="Problems\Auction.cs" />
     <Compile Include="Problems\BalancedSmileys.cs">
