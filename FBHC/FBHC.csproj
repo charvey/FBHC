@@ -70,6 +70,9 @@
     <Compile Include="Problems\FindTheMin.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Problems\NewYearsResolution.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Problems\PegGame.cs" />
     <Compile Include="Problems\RecoverTheSequence.cs" />
     <Compile Include="Problems\Security.cs">
@@ -259,6 +262,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\2015\0\CookingTheBooks\CookingTheBooksSampleInput.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\2015\0\NewYearsResolution\NewYearsResolutionInput.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\2015\0\NewYearsResolution\NewYearsResolutionSampleInput.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\2015\0\NewYearsResolution\NewYearsResolutionSampleOutput.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

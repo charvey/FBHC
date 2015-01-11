@@ -19,7 +19,8 @@ namespace FBHC
 			}
 
 			var problems = new Problem[] {
-				new CookingTheBooks()
+				new CookingTheBooks(),
+				new NewYearsResolution()
 			};
 
 			foreach (var problem in problems)
