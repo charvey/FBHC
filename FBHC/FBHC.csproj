@@ -49,6 +49,7 @@
     <Compile Include="ProblemConfig.cs" />
     <Compile Include="ProblemCreator.cs" />
     <Compile Include="Problems\AlphabetSoup.cs" />
+    <Compile Include="Problems\Autocomplete.cs" />
     <Compile Include="Problems\CookingTheBooks.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -288,6 +289,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\2015\0\NewYearsResolution\NewYearsResolutionSampleOutput.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\2015\1\Autocomplete\AutocompleteInput.txt" />
+    <Content Include="Files\2015\1\Autocomplete\AutocompleteSampleInput.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\2015\1\Autocomplete\AutocompleteSampleOutput.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\2015\1\Homework\HomeworkInput.txt">
