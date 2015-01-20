@@ -1,42 +1,41 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace FBHC.Problems
 {
 	class CorporateGifting : Problem
 	{
-		public CorporateGifting()
-		{
-			string cases = "";
-			cases += "200000\n" + string.Join(" ", Enumerable.Range(0, 200000)) + "\n";
-			cases += "200000\n" + string.Join(" ", Enumerable.Range(0, 200000).Select(i => i / 2)) + "\n";
-			cases += "8\n" + "0 3 3 1 1 2 2 2" + "\n";
-
-			File.WriteAllText("new case", cases);
-		}
-
-
 		private class Employee
 		{
 			public Employee Manager;
 			public List<Employee> Subordinates = new List<Employee>();
 
-			public int Gift
-			{
-				get
-				{
-					return Subordinates.Count == 0
-						? 1
-						: Enumerable.Range(1, int.MaxValue)
-						.First(i => !Subordinates.Any(s => s.Gift == i));
-				}
-			}
+			public int Gift { get; set; }
+			public int Cost { get; set; }
 
-			public int cost()
+			public void Compute()
 			{
-				return Gift + Subordinates.Sum(s => s.cost());
+				var stack = new Stack<Employee>();
+				stack.Push(this);
+				while (stack.Count > 0)
+				{
+					var empties = stack.Peek().Subordinates.Where(e => e.Gift == 0);
+					if (empties.Any())
+					{
+						foreach (var empty in empties)
+						{
+							stack.Push(empty);
+						}
+					}
+					else
+					{
+						var subgifts = new HashSet<int>(stack.Peek().Subordinates.Select(s => s.Gift));
+						stack.Peek().Gift = Enumerable.Range(1, int.MaxValue).First(i => !subgifts.Contains(i));
+						stack.Peek().Cost = stack.Peek().Gift + stack.Peek().Subordinates.Sum(s => s.Cost);
+						stack.Pop();
+					}
+				}
 			}
 		}
 
@@ -65,7 +64,8 @@ namespace FBHC.Problems
 				parent.Subordinates.Add(node);
 			}
 
-			return tree[0].cost().ToString();
+			tree[0].Compute();
+			return tree[0].Cost.ToString();
 		}
 	}
 }
