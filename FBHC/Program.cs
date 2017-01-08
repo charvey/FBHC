@@ -8,9 +8,9 @@ namespace FBHC
 		static void Main(string[] args)
 		{
 			var problems = new Problem[] {
-				new CookingTheBooks(),
-				new NewYearsResolution(),
-				new LaserMaze()
+				new ProgressPie(),
+				new LazyLoading(),
+				new FightingTheZombie()
 			};
 
 			foreach (var problem in problems)
@@ -19,7 +19,7 @@ namespace FBHC
 				{
 					problem.Validate();
 					problem.Solve();
-				}
+                }
 				catch (NotImplementedException)
 				{
 
