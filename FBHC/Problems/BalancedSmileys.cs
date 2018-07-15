@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class BalancedSmileys:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Balanced Smileys", 2013, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Balanced Smileys", 2013, 0);
 
-        protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
         {
             _isBalanced = new bool?[input[0].Length+1, input[0].Length / 2+2];
             return IsBalanced(input[0]) ? "YES" : "NO";

@@ -21,12 +21,9 @@ namespace FBHC.Problems
 
 		private Macro goal;
 
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("New Year's Resolution", 2015, 0); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("New Year's Resolution", 2015, 0);
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			var goal = getMacros(input.ElementAt(0));
 

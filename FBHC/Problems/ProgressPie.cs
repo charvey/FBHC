@@ -9,12 +9,9 @@ namespace FBHC.Problems
 		private const int cY = 50;
 		private const int HEIGHT = 100;
 
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("Progress Pie", 2017, 0); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("Progress Pie", 2017, 0);
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			var P = int.Parse(input[0].Split(' ')[0]);
 			var X = int.Parse(input[0].Split(' ')[1]);

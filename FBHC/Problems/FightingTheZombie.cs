@@ -5,17 +5,14 @@ namespace FBHC.Problems
 {
 	public class FightingTheZombie : Problem
 	{
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("Fighting The Zombie", 2017, 0); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("Fighting The Zombie", 2017, 0);
 
 		protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
 		{
 			return 2;
 		}
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			var H = int.Parse(input[0].Split(' ')[0]);
 			var S = int.Parse(input[0].Split(' ')[1]);

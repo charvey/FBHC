@@ -1,25 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class SquishedStatus : Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Squished Status", 2012, 1); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Squished Status", 2012, 1);
 
-        protected override int LinesPerTestCase { get { return 2; } }
+		protected override int LinesPerTestCase { get { return 2; } }
 
         protected override string[] SplitLines(string text)
         {
             return text.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries);
         }
 
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             int M = Convert.ToInt32(input[0]);
             string s = input[1];

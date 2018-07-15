@@ -6,12 +6,9 @@ namespace FBHC.Problems
 {
 	class LaserMaze : Problem
 	{
-		protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Laser Maze", 2015, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Laser Maze", 2015, 0);
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			int[] mn = input[0].Split(' ').Select(x => Convert.ToInt32(x)).ToArray();
 			int m = mn[0];

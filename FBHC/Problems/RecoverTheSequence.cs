@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class RecoverTheSequence:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Recover The Sequence", 2012, 1); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Recover The Sequence", 2012, 1);
 
-        protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
         {
             throw new NotImplementedException();
         }

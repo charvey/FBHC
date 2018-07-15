@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace FBHC.Problems
 {
 	class CookingTheBooks : Problem
 	{
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("Cooking The Books", 2015, 0); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("Cooking The Books", 2015, 0);
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			char[] digits = input[0].ToArray();
 

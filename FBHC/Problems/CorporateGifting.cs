@@ -39,14 +39,11 @@ namespace FBHC.Problems
 			}
 		}
 
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("Corporate Gifting", 2015, 1); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("Corporate Gifting", 2015, 1);
 
 		protected override int LinesPerTestCase { get { return 2; } }
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			int N = Convert.ToInt32(input[0]);
 			Employee[] tree = new Employee[N];

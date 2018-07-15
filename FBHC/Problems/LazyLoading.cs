@@ -8,17 +8,14 @@ namespace FBHC.Problems
 	{
 		private const double REQUIRED_WEIGHT = 50;
 
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("Lazy Loading", 2017, 0); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("Lazy Loading", 2017, 0);
 
 		protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
 		{
 			return 1 + int.Parse(remainingLines.First());
 		}
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			var W = input.Skip(1).Take(int.Parse(input[0])).Select(int.Parse);
 			var items = W.OrderByDescending(w => w).ToList();

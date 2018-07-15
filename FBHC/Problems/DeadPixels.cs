@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class DeadPixels:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("DeadPixels", 2013, 1); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("DeadPixels", 2013, 1);
 
-        protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
         {
             var nums =
                 input[0].Split(new char[0], StringSplitOptions.RemoveEmptyEntries)

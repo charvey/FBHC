@@ -5,12 +5,9 @@ namespace FBHC.Problems
 {
 	class Homework : Problem
 	{
-		protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Homework", 2015, 1); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Homework", 2015, 1);
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			int[] values = input[0].Split(' ').Select(t => Convert.ToInt32(t)).ToArray();
 

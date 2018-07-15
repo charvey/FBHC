@@ -5,12 +5,9 @@ namespace FBHC.Problems
 {
     public class Billboards:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Billboards", 2012, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Billboards", 2012, 0);
 
-        protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
         {
             var tokens = input[0].Split(' ');
             return FitToBillboard(Convert.ToInt32(tokens[0]), Convert.ToInt32(tokens[1]), tokens.Skip(2).ToArray()).ToString();

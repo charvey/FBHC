@@ -5,14 +5,11 @@ namespace FBHC.Problems
 {
 	class WinningAtSports : Problem
 	{
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("Winning at Sports", 2015, 1); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("Winning at Sports", 2015, 1);
 
 		const int MOD = 1000000007;
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			int[] values = input[0].Split('-').Select(t => Convert.ToInt32(t)).ToArray();
 

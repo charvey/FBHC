@@ -6,10 +6,7 @@ namespace FBHC.Problems
 {
 	public class ManicMoving : Problem
 	{
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("Manic Moving", 2017, 1); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("Manic Moving", 2017, 1);
 
 		protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
 		{
@@ -18,7 +15,7 @@ namespace FBHC.Problems
 			return 1 + M + K;
 		}
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			var N = int.Parse(input[0].Split(' ')[0]);
 			var M = int.Parse(input[0].Split(' ')[1]);

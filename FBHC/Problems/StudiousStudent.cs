@@ -6,12 +6,9 @@ namespace FBHC.Problems
 {
     public class StudiousStudent : Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Studious Student", 2011, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Studious Student", 2011, 0);
 
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             var tokens = input[0].Split(' ');
             return LeastPermutation(tokens.Skip(1).Take(Convert.ToInt32(tokens[0])).ToArray());

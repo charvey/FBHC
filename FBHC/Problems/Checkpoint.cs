@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class Checkpoint : Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Checkpoint", 2012, 1); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Checkpoint", 2012, 1);
 
-        private static Dictionary<int, int> _min;
+		private static Dictionary<int, int> _min;
         private static Dictionary<int, int> min
         {
             get
@@ -50,7 +45,7 @@ namespace FBHC.Problems
             }
         }
 
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             int s = Convert.ToInt32(input[0]);
 

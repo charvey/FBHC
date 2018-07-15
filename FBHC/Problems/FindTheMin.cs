@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class FindTheMin:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Find The Min", 2013, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Find The Min", 2013, 0);
 
-        protected override int LinesPerTestCase { get { return 2; } }
+		protected override int LinesPerTestCase { get { return 2; } }
         
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             if (input[0].Length == 0) return string.Empty;
 

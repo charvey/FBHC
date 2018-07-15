@@ -1,5 +1,4 @@
-﻿using FBHC.Problems;
-using System;
+﻿using System;
 
 namespace FBHC
 {
@@ -8,17 +7,14 @@ namespace FBHC
 		static void Main(string[] args)
 		{
 			var problems = new Problem[] {
-				new ProgressPie(),
-				new LazyLoading(),
-				new FightingTheZombie()
+				//new EthanSearchesForAString()
 			};
 
 			foreach (var problem in problems)
 			{
 				try
 				{
-					problem.Validate();
-					problem.Solve();
+					//problem.Solve();
                 }
 				catch (NotImplementedException)
 				{

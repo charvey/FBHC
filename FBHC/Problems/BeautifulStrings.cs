@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace FBHC.Problems
 {
-    class BeautifulStrings:Problem
+	class BeautifulStrings:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Beautiful Strings", 2013, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Beautiful Strings", 2013, 0);
 
-        protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
         {
             var sentence = new string(input[0].ToUpper().Where(c => 'A' <= c && c <= 'Z').ToArray());
 

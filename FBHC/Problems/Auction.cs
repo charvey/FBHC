@@ -5,14 +5,11 @@ namespace FBHC.Problems
 {
     public class Auction : Problem
     {
-        //http://pastebin.com/raw.php?i=X2ZB2dY3
+		//http://pastebin.com/raw.php?i=X2ZB2dY3
 
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Auction", 2012, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Auction", 2012, 0);
 
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             var tokens = input[0].Split(' ');
             var p = tokens.Skip(1).Select(t => Convert.ToInt32(t)).ToArray();

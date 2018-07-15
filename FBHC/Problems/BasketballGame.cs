@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
@@ -16,17 +14,14 @@ namespace FBHC.Problems
             public int DraftOrder;
         }
 
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Basketball Game", 2014, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Basketball Game", 2014, 0);
 
-        protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
+		protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
         {
             return int.Parse(Split(remainingLines.First())[0]) + 1;
         }
 
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             string[] nmp = Split(input[0]);
             int N = int.Parse(nmp[0]),

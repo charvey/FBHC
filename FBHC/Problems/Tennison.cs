@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class Tennison : Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Tennison", 2014, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Tennison", 2014, 0);
 
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             Console.WriteLine("New Case");
             input = input[0].Split(new char[]{}, StringSplitOptions.RemoveEmptyEntries);

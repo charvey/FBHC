@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
-    class CardGame:Problem
+	class CardGame:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("CardGame", 2013, 1); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("CardGame", 2013, 1);
 
-        protected override int LinesPerTestCase
+		protected override int LinesPerTestCase
         {
             get { return 2; }
         }
 
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             int n = Convert.ToInt32(input[0].Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries)[0]);
             uint k = Convert.ToUInt32(input[0].Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries)[1]);

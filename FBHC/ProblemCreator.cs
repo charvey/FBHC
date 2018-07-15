@@ -56,12 +56,12 @@ namespace FBHC.Problems
 {
 	class " + config.FileName + @" : Problem
 	{
-		protected override ProblemConfig Config
+		public override ProblemConfig Config
         {
             get { return new ProblemConfig(""" + config.Name + "\", " + config.Year + ", " + config.Round + @"); }
         }
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			throw new NotImplementedException();
 		}

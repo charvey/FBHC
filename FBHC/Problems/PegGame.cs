@@ -5,12 +5,9 @@ namespace FBHC.Problems
 {
     public class PegGame : Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Peg Game", 2011, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Peg Game", 2011, 0);
 
-        protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
         {
             var tokens = input[0].Split(' ');
             var pi = tokens.Select(x => Convert.ToInt32(x)).ToArray();
@@ -28,7 +25,7 @@ namespace FBHC.Problems
 
             var x = Pegs_Best(k, board);
 
-            return string.Format("{0} {1}", x.Item1, Math.Round(x.Item2, 6));
+			return $"{x.Item1} {x.Item2:F6}";
         }
 
         private static bool[,] Pegs_BuildBoard(int r, int c, int[] m)

@@ -6,17 +6,14 @@ namespace FBHC.Problems
 {
 	class Autocomplete : Problem
 	{
-		protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Autocomplete", 2015, 1); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Autocomplete", 2015, 1);
 
 		protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
 		{
 			return 1 + Convert.ToInt32(remainingLines.First());
 		}
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			Dictionary<string, string> dict = new Dictionary<string, string>();
 

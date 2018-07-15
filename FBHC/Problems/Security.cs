@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class Security:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Security", 2013, 1); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Security", 2013, 1);
 
-        protected override int LinesPerTestCase
+		protected override int LinesPerTestCase
         {
             get { return 3; }
         }
 
-
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             int m = Convert.ToInt32(input[0]);
             string k1 = input[1];

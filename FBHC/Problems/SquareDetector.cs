@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FBHC.Problems
 {
     class SquareDetector:Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Square Detector", 2014, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Square Detector", 2014, 0);
 
         protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
         {
             return int.Parse(remainingLines.First()) + 1;
         }
 
-        protected override string SolveTestCase(string[] input)
+        public override string SolveTestCase(string[] input)
         {
             int N = int.Parse(input[0]);
 

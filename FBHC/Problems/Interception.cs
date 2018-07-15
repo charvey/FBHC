@@ -5,17 +5,14 @@ namespace FBHC.Problems
 {
 	class Interception : Problem
 	{
-		protected override ProblemConfig Config
-		{
-			get { return new ProblemConfig("Interception", 2018, 0); }
-		}
+		public override ProblemConfig Config => new ProblemConfig("Interception", 2018, 0);
 
 		protected override int GetLinesInTestCase(IEnumerable<string> remainingLines)
 		{
 			return int.Parse(remainingLines.First()) + 1;
 		}
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			var N = int.Parse(input[0]);
 			var P = input.Skip(1).Take(N).Select(int.Parse).ToArray();

@@ -4,12 +4,9 @@ namespace FBHC.Problems
 {
 	class EthanSearchesForAString : Problem
 	{
-		protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Ethan Searches for a String", 2018, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Ethan Searches for a String", 2018, 0);
 
-		protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
 		{
 			throw new NotImplementedException();
 		}

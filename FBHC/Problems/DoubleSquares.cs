@@ -4,12 +4,9 @@ namespace FBHC.Problems
 {
     public class DoubleSquares : Problem
     {
-        protected override ProblemConfig Config
-        {
-            get { return new ProblemConfig("Double Squares", 2011, 0); }
-        }
+		public override ProblemConfig Config => new ProblemConfig("Double Squares", 2011, 0);
 
-        protected override string SolveTestCase(string[] input)
+		public override string SolveTestCase(string[] input)
         {
             var tokens = input[0].Split(' ');
             return Squares_TestCase(Convert.ToInt32(tokens[0]));
